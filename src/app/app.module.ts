@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AsadoListaComponent } from './dashboard/asado-lista/asado-lista.component';
+import { AsadoItemComponent } from './dashboard/asado-lista/asado-item/asado-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    AsadoListaComponent,
+    AsadoItemComponent
   ],
   imports: [
     BrowserModule,
