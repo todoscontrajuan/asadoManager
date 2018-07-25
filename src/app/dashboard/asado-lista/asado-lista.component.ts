@@ -7,11 +7,7 @@ import { AngularFirestore} from 'angularfire2/firestore'
   styleUrls: ['./asado-lista.component.scss']
 })
 export class AsadoListaComponent implements OnInit {
-	asados = [
-		/*{ name: 'Asado de los pibes', id: 1 },
-    	{ name: 'Asado mundial', id: 2 },
-    	{ name: 'Rapidito', id: 3 }*/
-	]
+	asados = []
 
   constructor(private _store: AngularFirestore) { }
 

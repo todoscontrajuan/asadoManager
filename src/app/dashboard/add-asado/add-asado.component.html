@@ -1,3 +1,25 @@
-<p>
-  add-asado works!
-</p>
+<div>
+  <h3>Add an asado</h3>
+  <form #f ngNativeValidate (ngSubmit)="addAsado(f)">
+
+    <input placeholder="Name - Description" name="name"
+     [(ngModel)]="asado.name" autocomplete="off" required />
+     <br>
+
+    <span>Date: </span><input type="date"
+     name="date" [(ngModel)]="asado.date" autocomplete="off" required />
+     <br>
+    
+    <input type="number" placeholder="Attendees"
+     name="attendees" [(ngModel)]="asado.attendees" autocomplete="off" required />
+     <br>
+
+    <span>$</span><input type="number" placeholder="Price"
+     name="price" [(ngModel)]="asado.price" autocomplete="off" required />
+     <br>
+
+    <button type="submit">Add</button>
+    
+    <p class="error">{{ error }}</p>
+  </form>
+</div>
