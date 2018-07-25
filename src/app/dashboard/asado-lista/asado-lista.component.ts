@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore} from 'angularfire2/firestore'
 
 @Component({
   selector: 'app-asado-lista',
@@ -7,21 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsadoListaComponent implements OnInit {
 	asados = [
-		{ name: 'Asado de los pibes' },
-    	{ name: 'Asado mundial' },
-    	{ name: 'Rapidito' }
+		/*{ name: 'Asado de los pibes', id: 1 },
+    	{ name: 'Asado mundial', id: 2 },
+    	{ name: 'Rapidito', id: 3 }*/
 	]
-	clicked = false;
-	asado = {};
 
-  constructor() { }
+  constructor(private _store: AngularFirestore) { }
 
   ngOnInit() {
-  }
-
-  goToDetails(asado) {
-  	this.clicked = true;
-  	this.asado = asado;
+    this._store.collection('asados').valueChanges().subscribe(asados => this.asados = asados);
   }
 
 }

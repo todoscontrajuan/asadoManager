@@ -1,11 +1,5 @@
-<div *ngIf="clicked; then Detail else AsadoList"></div>
-<ng-template #AsadoList>
-	<app-asado-item *ngFor="let asado of asados" (navigateDetails)="goToDetails($event)" [asado]="asado">
-	
-	</app-asado-item>
-</ng-template>
-
-<ng-template #Detail>
-	<p *ngIf="clicked">Navegué a detalles de {{asado.name}}</p>
-</ng-template>
-
+<app-asado-item
+	*ngFor="let asado of asados"
+	[asado]="asado"
+	[routerLink]="['/detail', asado.name]">
+</app-asado-item>	

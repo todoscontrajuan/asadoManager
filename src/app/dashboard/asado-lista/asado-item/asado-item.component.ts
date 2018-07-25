@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-asado-item',
@@ -8,15 +8,10 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class AsadoItemComponent implements OnInit {
 
 	@Input() asado;
-	@Output() navigateDetails = new EventEmitter();
 
 	constructor() { }
 
   	ngOnInit() {
   	}
-
-	goToDetails(asado) {
-		this.navigateDetails.emit(asado);
-	}
 
 }
