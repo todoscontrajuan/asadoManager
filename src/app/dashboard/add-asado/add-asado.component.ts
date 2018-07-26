@@ -25,7 +25,7 @@ export class AddAsadoComponent implements OnInit {
 
   addAsado = (form: NgForm) => {
     this.asado.id = this._store.createId();
-    this._store.collection('asados').add(this.asado)
+    this._store.collection('asados').doc(`${this.asado.id}`).set(this.asado)
       .then(() => {
         form.reset();
         alert('Asado added!');
