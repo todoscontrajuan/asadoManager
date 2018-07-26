@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AsadoDetalleComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { 
-    this.route.params.subscribe(name => console.log(name));
+    this.route.params.subscribe(id => console.log(id));
   }
 
   ngOnInit() {

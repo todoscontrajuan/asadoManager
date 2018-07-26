@@ -4,6 +4,7 @@ import { AngularFirestore} from 'angularfire2/firestore'
 import { Router } from '@angular/router';
 
 export interface Asado {
+  id: string;
   name: string;
   date: Date;
   attendees: number;
@@ -16,13 +17,14 @@ export interface Asado {
   styleUrls: ['./add-asado.component.scss']
 })
 export class AddAsadoComponent implements OnInit {
-  asado: Asado = {name: '', date:null, attendees:0, price:0}
+  asado: Asado = {id: '', name: '', date: null, attendees: 0, price: 0}
   constructor(private _store:AngularFirestore, private _router: Router) { }
 
   ngOnInit() {
   }
 
   addAsado = (form: NgForm) => {
+    this.asado.id = this._store.createId();
     this._store.collection('asados').add(this.asado)
       .then(() => {
         form.reset();

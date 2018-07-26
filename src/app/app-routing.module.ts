@@ -9,7 +9,7 @@ import { AddAsadoComponent } from './dashboard/add-asado/add-asado.component';
 
 const routes: Routes = [
 	{ path: '', component: LoginComponent},
-	{ path: 'detail/:name', component: AsadoDetalleComponent, canActivate: [ AuthGuard ] },
+	{ path: 'detail/:id', component: AsadoDetalleComponent, canActivate: [ AuthGuard ] },
 	{ path: 'register', component: RegisterComponent },
 	{ path: 'dashboard', component: DashboardComponent, canActivate: [ AuthGuard ] },
 	{ path: 'login', component: LoginComponent },
